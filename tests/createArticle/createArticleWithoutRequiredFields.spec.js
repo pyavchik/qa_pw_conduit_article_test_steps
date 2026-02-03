@@ -30,7 +30,7 @@ test.beforeEach(async ({ page }) => {
 test('Create an article without required fields', async () => {
   await createArticlePage.clickPublishArticleButton();
   await createArticlePage.assertErrorMessageContainsText(
-    'Article title cannot be empty',
+    "title can't be blank",
   );
 });
 
@@ -53,7 +53,7 @@ test('Create an article without article description', async () => {
   await createArticlePage.fillEnterTagsField('test');
   await createArticlePage.clickPublishArticleButton();
   await createArticlePage.assertErrorMessageContainsText(
-    'Article description cannot be empty',
+    "description can't be blank",
   );
 });
 
@@ -63,7 +63,7 @@ test('Create an article without article text', async () => {
   await createArticlePage.fillEnterTagsField('test');
   await createArticlePage.clickPublishArticleButton();
   await createArticlePage.assertErrorMessageContainsText(
-    'Article body cannot be empty',
+    "body can't be blank",
   );
 });
 
